@@ -1,0 +1,163 @@
+// Single posts
+.single-post {
+    margin: 0 0 1rem;
+    font-family: $font-family-post;
+
+    .post-image {
+        margin-bottom: 2rem;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .post-content {
+        display: flex;
+        flex-direction: column;
+
+        .post-featured {
+            font-weight: 600;
+        }
+
+        .post-meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 2rem;
+
+            @media (min-width: 1200px) {
+                flex-direction: row;
+                justify-content: initial;
+                align-items: center;
+            }
+
+            .post-meta-date {
+                display: flex;
+
+                @media (min-width: 992px) {
+                    align-items: center;
+                }
+
+                .post-meta-date-icon {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .post-tags {
+        margin: 0 0 .625rem;
+
+        li {
+            margin-right: 1rem;
+        }
+    }
+
+    .post-title {
+        max-width: 80%;
+        margin: 0 0 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $text-color;
+        line-height: 1.2;
+    }
+
+    .post-author {
+        display: flex;
+        align-items: center;
+        margin: 0 0 1rem;
+
+        > span {
+            font-weight: 600;
+        }
+
+        .post-author-avatar{
+            margin-right: 1rem;
+            height: 50px;
+
+            a {
+                img {
+                    width: 50px;
+                    height: auto;
+                    border: 0;
+                    border-radius: 50%;
+                    filter: grayscale(100%);
+                    transition: filter .2s ease;
+                }
+
+                @include hover-state {
+                    img {
+                        filter: none;
+                    }
+                }
+            }
+        }
+
+        .post-author-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .post-author-info-description {
+                font-weight: 300;
+                color: rgba($text-color, .54);
+                transition: color .2s ease;
+            }
+
+            .post-author-info-name {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .meta {
+        .post-meta {
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: 1200px) {
+                flex-direction: initial;
+            }
+        }
+    }
+
+    .updated_at {
+        margin-left: .2rem;
+    }
+
+    h2 {
+        margin: 3rem 0 1.85rem;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.75rem;
+        letter-spacing: -1px;
+    }
+
+    .post-wrap {
+        h2 {
+            &:first-of-type {
+                margin: 1rem 0 2rem;
+            }
+        }
+
+        p {
+            margin: 0 0 1.5rem;
+        }
+    }
+
+    h3 {
+        margin: .75rem 0 .5rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 2rem;
+    }
+
+    h4 {
+        margin: .5rem 0 .25rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.75rem;
+    }
+}

@@ -1,0 +1,59 @@
+// Button
+.button {
+    display: flex;
+    background-color: $light;
+    border: 1px solid rgba(0, 0, 0, .35);
+    border-radius: $border-radius;
+    font-weight: 600;
+    text-decoration: none;
+    outline: none;
+    transition: background-color .2s ease;
+
+    @include hover-state {
+        background-color: darken($light, 10%);
+    }
+
+    &--blue {
+        background-color: $blue;
+        color: $light;
+
+        @include hover-state {
+            background-color: darken($blue, 10%);
+            color: $light;
+        }
+    }
+
+    &--green {
+        background-color: $green;
+        color: $light;
+
+        @include hover-state {
+            background-color: darken($green, 10%);
+            color: $light;
+        }
+    }
+
+    &--red {
+        background-color: $red;
+        color: $light;
+
+        @include hover-state {
+            background-color: darken($red, 10%);
+            color: $light;
+        }
+    }
+
+    &.tag-button {
+        padding: 0.1875rem .9375rem;
+        background-color: $blue;
+        border: 1px solid transparent;
+        font-size: .875rem;
+        color: $light;
+        text-transform: uppercase;
+
+        @include hover-state {
+            background-color: lighten($blue, 10%);
+            color: $light;
+        }
+    }
+}

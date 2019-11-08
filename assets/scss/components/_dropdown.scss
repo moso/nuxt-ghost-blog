@@ -1,0 +1,101 @@
+// Dropdown
+.dropdown {
+    position: relative;
+    margin: .5rem 0 0;
+
+    @include hover-state {
+        cursor: pointer;
+    }
+
+    @media (min-width: 992px) {
+        margin: 0;
+        margin-left: auto;
+    }
+
+    > span {
+        margin: 0 .5rem 0 0;
+    }
+
+    > svg {
+        position: relative;
+        top: 2px;
+        width: auto;
+        height: 1rem;
+        transition: fill .5s ease;
+        fill: $dark;
+    }
+
+    @include hover-state {
+        svg {
+            fill: lighten($dark, 15%);
+        }
+    }
+}
+
+.dropdown-content-inner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 7.5rem;
+    margin: .5rem 0 0;
+    padding: .5rem;
+    background-color: $light;
+    border: 1px solid $gray;
+    border-radius: $border-radius;
+    z-index: 3;
+
+    @include hover-state {
+        cursor: default;
+    }
+
+    @media (min-width: 992px) {
+        right: 0;
+    }
+
+    .dropdown-header {
+        margin: 0 0 .5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $dark;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        height: 1.5rem;
+        margin: .3rem 0;
+
+        svg {
+            width: auto;
+            height: 1.5rem;
+            margin: 0 .5rem 0 0;
+            transition: fill .2s ease;
+        }
+
+        &.twitter {
+            svg {
+                fill: $twitter-color;
+            }
+        }
+
+        &.facebook {
+            svg {
+                fill: $facebook-color;
+            }
+        }
+
+        @include hover-state {
+            &.twitter {
+                svg {
+                    fill: lighten($twitter-color, 15%);
+                }
+            }
+
+            &.facebook {
+                svg {
+                    fill: lighten($facebook-color, 15%);
+                }
+            }
+        }
+    }
+}

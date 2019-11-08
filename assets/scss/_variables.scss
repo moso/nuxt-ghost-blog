@@ -1,0 +1,29 @@
+// Variables
+
+// Fonts
+$font-stack:        -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,"Helvetica Neue",sans-serif;
+$font-body:         "Source Sans Pro", $font-stack;
+$font-code:         "Roboto Mono", "Liberation Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-post:  $font-body;
+
+
+// Colors
+$dark:              #171717;
+$light:             #fff;
+$blue:              #0085c3;
+$green:             #009274;
+$red:               #c85e4b;
+$gray:              #dcddde;
+
+$text-color:        $dark;
+
+$twitter-color:     #1da1f2;
+$facebook-color:    #3b5998;
+
+$box-shadow:        0 1px 1px rgba(0,0,0,.05), 0 2px 2px rgba(0,0,0,.05), 0 4px 4px rgba(0,0,0,.05), 0 8px 8px rgba(0,0,0,.05), 0 16px 16px rgba(0,0,0,.05);
+
+
+// Magic numbers
+$navbar-height:     4.5rem;
+$sidebar-width:     16rem;
+$border-radius:     3px;

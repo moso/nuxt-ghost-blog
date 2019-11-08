@@ -1,0 +1,167 @@
+// Basic styles
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: calc(100vh - #{$navbar-height + 1rem});
+    margin: 0;
+    background-color: $light;
+    font-family: $font-body;
+    color: $text-color;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    margin-top: 0;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+    transition: color .2s ease;
+
+    @include hover-state {
+        color: lighten($blue, 10%);
+    }
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &.inline {
+        display: inline-flex;
+        flex-direction: initial;
+    }
+
+    &.meta {
+        flex-direction: column;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 0 0 .5rem;
+
+            @media (min-width: 1200px) {
+                margin: 0 1.5rem 0 0;
+            }
+
+            &:last-of-type {
+                margin: 0;
+            }
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+                margin: .125rem .5rem 0 0;
+                fill: $dark;
+                transition: fill .5s ease;
+
+                @media (min-width: 992px) {
+                    margin: 0 .5rem 0 0;
+                }
+            }
+        }
+    }
+
+    &.share {
+        margin-top: .5rem;
+        flex-direction: column;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 0 0 .5rem;
+
+            @media (min-width: 1200px) {
+                margin: 0 .5rem 0 0;
+            }
+
+            &:last-of-type {
+                margin: 0;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+            }
+
+            svg {
+                width: 1.25rem;
+                height: 1.25rem;
+                fill: $dark;
+                transition: fill .5s ease;
+            }
+        }
+    }
+}
+
+blockquote {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem 1.5rem 3rem;
+    background-color: lighten($gray, 10%);
+    border-left: 6px solid lighten($dark, 75%);
+    border-radius: $border-radius;
+    font-style: italic;
+    color: lighten($text-color, 15%);
+
+    &::before {
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        content: "\201C";
+        color: lighten($text-color, 15%);
+        font-size: 3.25rem;
+
+    }
+
+    &::after {
+        content: '';
+    }
+
+    span {
+        display: block;
+        margin: 1rem 0 0;
+        font-style: normal;
+        font-weight: 600;
+        color: $text-color;
+    }
+}
+
+main {
+    margin-top: $navbar-height + 1rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+:not(pre) > code {
+    padding: .25rem .375em;
+    color: #2f3136;
+    font-size: 85%;
+    text-shadow: none;
+    white-space: normal;
+    background: lighten($gray, 5%);
+    border-radius: $border-radius;
+}

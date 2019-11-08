@@ -1,0 +1,216 @@
+// Navbar
+.navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: $navbar-height;
+    background-color: rgba($light, .87);
+    box-shadow: $box-shadow;
+    transition: background-color .2s ease;
+    z-index: 4;
+
+    &.solid {
+        background-color: $light;
+    }
+
+    .nav-header {
+        display: flex;
+        padding: .5rem 0;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: $navbar-height - 1rem;
+
+            a {
+                display: flex;
+                margin: 0 1rem 0 0;
+
+                @media (min-width: 992px) {
+                    margin: 0 2rem 0 0;
+                }
+
+                svg {
+                    width: auto;
+                    height: 100%;
+                    max-height: $navbar-height - 2rem;
+                }
+            }
+
+            img {
+                width: auto;
+                height: 100%;
+                max-height: $navbar-height - 2rem;
+            }
+
+            h1 {
+                margin: 0;
+                color: $light;
+            }
+        }
+    }
+    .nav-content {
+        position: fixed;
+        top: $navbar-height;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        width: $sidebar-width;
+        height: calc(100vh - #{$navbar-height});
+        background-color: $light;
+        transform: translate3d(105%, 0, 0);
+        transition: all .5s cubic-bezier(.685, .0473, .346, 1);
+
+        @media (min-width: 992px) {
+            position: initial;
+            top: initial;
+            right: initial;
+            flex-direction: initial;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            margin: 0 0 0 auto;
+            height: $navbar-height - 1rem;
+            background-color: transparent;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.sidebar-open {
+            transform: translate3d(0, 0, 0);
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0 1rem 1rem;
+            list-style: none;
+
+            @media (min-width: 992px) {
+                flex-direction: initial;
+                height: 100%;
+                padding: 0;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                height: 100%;
+
+                @media (min-width: 992px) {
+                    justify-content: center;
+                }
+
+                a {
+                    padding: 1rem 0;
+                    color: $dark;
+                    transition: color .2s ease;
+
+                    @include hover-state {
+                        color: lighten($text-color, 35%);
+                    }
+
+                    @media (min-width: 992px) {
+                        $color: $dark;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        padding: .5rem 1rem;
+                        color: $color;
+
+                        @include hover-state {
+                            color: darken($color, 15%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-toggle {
+        margin: 0 0 0 auto;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+
+        @media (min-width: 992px) {
+            display: none;
+        }
+
+        @include hover-state {
+            outline: 0;
+            cursor: pointer;
+        }
+
+        .icon-bar {
+            position: relative;
+            display: block;
+            width: 24px;
+            height: 2px;
+            border-radius: 1px;
+            background-color: $dark;
+
+            + .icon-bar {
+                margin-top: 4px;
+            }
+
+            &.bar1 {
+                top: 0;
+                outline: 1px solid transparent;
+                animation: topbar-back 500ms 0s;
+                animation-fill-mode: forwards;
+            }
+
+            &.bar2 {
+                outline: 1px solid transparent;
+                opacity: 1;
+            }
+
+            &.bar3 {
+                bottom: 0;
+                outline: 1px solid transparent;
+                animation: bottombar-back 500ms 0s;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        &.toggled {
+            .icon-bar {
+                &.bar1 {
+                    top: 6px;
+                    animation: topbar-x 500ms 0s;
+                    animation-fill-mode: forwards;
+                }
+                &.bar2 {
+                    opacity: 0;
+                }
+                &.bar3 {
+                    bottom: 6px;
+                    animation: bottombar-x 500ms 0s;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    }
+}
+
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .20);
+    transition: background-color .5s cubic-bezier(.685, .0473, .346, 1);
+    z-index: 3;
+}
+
+.sidebar-backdrop-enter-active {
+    background-color: rgba(0,0,0,.20);
+}
+
+.sidebar-backdrop-enter, .sidebar-backdrop-leave-to {
+    background-color: transparent;
+}

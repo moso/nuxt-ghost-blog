@@ -1,0 +1,13 @@
+// Small highlightjs overrides
+pre {
+    width: 100%;
+}
+
+.hljs {
+    padding: 1rem;
+    background-color: #2f3136;
+    border-radius: $border-radius;
+    font-family: $font-code;
+    font-size: 85%;
+    white-space: pre-wrap;
+}

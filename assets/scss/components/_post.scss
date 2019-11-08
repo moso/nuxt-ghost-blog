@@ -1,0 +1,143 @@
+// Posts, tag-posts
+.post, .tag-post {
+    margin: 0 0 2rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    font-family: $font-family-post;
+
+    @media (min-width: 992px) {
+        margin: 0 0 3rem;
+        padding: 0 0 2rem;
+    }
+
+    .post-image {
+        margin: 0 0 2rem;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .post-content {
+        display: flex;
+        flex-direction: column;
+
+        .post-featured {
+            font-weight: 600;
+        }
+
+        .post-meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (min-width: 1200px) {
+                flex-direction: row;
+                justify-content: initial;
+                align-items: center;
+            }
+
+            .post-meta-date {
+                display: flex;
+                align-items: flex-start;
+
+                @media (min-width: 992px) {
+                    align-items: center;
+                }
+
+                .post-meta-date-icon {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .post-tags {
+        margin: 0 0 .625rem;
+
+        li {
+            margin-right: 1rem;
+        }
+    }
+
+    .post-title {
+        max-width: 80%;
+        margin: 0 0 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.2;
+
+        a {
+            color: $text-color;
+            text-decoration: none;
+
+            @include hover-state {
+                color: lighten($text-color, 20%);
+            }
+        }
+    }
+
+    .post-author {
+        display: flex;
+        align-items: center;
+        margin: 0 0 1rem;
+
+        > span {
+            font-weight: 600;
+        }
+
+        .post-author-avatar{
+            margin-right: 1rem;
+            height: 50px;
+
+            a {
+                img {
+                    width: 50px;
+                    height: auto;
+                    border: 0;
+                    border-radius: 50%;
+                    filter: grayscale(100%);
+                    transition: filter .2s ease;
+                }
+
+                @include hover-state {
+                    img {
+                        filter: grayscale(0%);
+                    }
+                }
+            }
+        }
+
+        .post-author-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .post-author-info-description {
+                font-weight: 300;
+                color: rgba($text-color, .54);
+                transition: color .2s ease;
+            }
+
+            .post-author-info-name {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .post-read-more {
+        margin-bottom: 2rem;
+        font-weight: 600;
+        color: $text-color;
+
+        @include hover-state {
+            color: lighten($text-color, 20%);
+        }
+    }
+
+    .updated_at {
+        margin-left: .2rem;
+    }
+}

@@ -1,0 +1,27 @@
+// Pagination
+.pagination {
+    display: flex;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+
+    .next {
+        margin-left: auto;
+    }
+
+    .next,
+    .prev {
+        > a {
+            cursor: pointer;
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+
+            > a {
+                color: rgba($dark, .30);
+                pointer-events: none;
+            }
+        }
+    }
+}
