@@ -25,7 +25,9 @@
 
             a {
                 display: flex;
+                align-items: center;
                 margin: 0 1rem 0 0;
+                height: $navbar-height - 1rem;
 
                 @media (min-width: 992px) {
                     margin: 0 2rem 0 0;
