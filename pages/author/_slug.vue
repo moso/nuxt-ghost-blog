@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="xs-12 lg-8 mx-auto">
                         <div class="author-info">
-                            <img :src="pageAuthor.profile_image" :alt="pageAuthor.name">
-                            <h1 class="author-title">{{ pageAuthor.name }}</h1>
-                            <h2 class="author-bio">{{ pageAuthor.bio }}</h2>
+                            <img v-if="pageAuthor.profile_image" :src="pageAuthor.profile_image" :alt="pageAuthor.name">
+                            <h1 v-if="pageAuthor.name" class="author-title">{{ pageAuthor.name }}</h1>
+                            <h2 v-if="pageAuthor.bio" class="author-bio">{{ pageAuthor.bio }}</h2>
                             <div class="author-meta">
                                 <div class="author-stats">{{ pageAuthor.count.posts }} posts</div>
                                 <a v-if="pageAuthor.website" class="social-link" :href="pageAuthor.website" title="Website">
