@@ -56,8 +56,7 @@ const generateRoutes = async () => {
     // Posts
     const posts = await api.posts.browse({
         limit: 'all',
-        include: 'tags',
-        order: 'featured:desc,published_at:desc'
+        include: 'authors,tags'
     })
 
     const postsWithLinks = posts.map((post, index) => {
