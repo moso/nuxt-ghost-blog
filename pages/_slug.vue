@@ -4,7 +4,7 @@
             <div class="xs-12 lg-10 mx-auto">
                 <article class="single-post">
                     <scroll-progress-bar />
-                    <div class="post-image">
+                    <div v-if="post.feature_image" class="post-image">
                         <img :src="post.feature_image" :alt="post.title">
                     </div>
                     <div class="row">
@@ -18,7 +18,7 @@
                                     </ul>
                                 </div>
                                 <h1 class="post-title">{{ post.title }}</h1>
-                                <div class="post-author">
+                                <div v-if="!pageSettings.page === 'true'" class="post-author">
                                     <div v-if="post.primary_author.profile_image" class="post-author-avatar">
                                         <nuxt-link :to="{ path: '/author/' + post.primary_author.slug }">
                                             <img :src="post.primary_author.profile_image" :alt="post.primary_author.name" />
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="post-meta">
+                                <div v-if="!pageSettings.page === 'true'" class="post-meta">
                                     <ul class="list inline meta">
                                         <li v-if="post.featured">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" version="1.1">
