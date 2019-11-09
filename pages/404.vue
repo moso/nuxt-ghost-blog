@@ -15,6 +15,17 @@
     </div>
 </template>
 
+<script>
+export default {
+    props: {
+        error: {
+            type: Object,
+            default: null
+        }
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 @import '~/assets/scss/_variables.scss';
 
