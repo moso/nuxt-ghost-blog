@@ -56,7 +56,8 @@ const generateRoutes = async () => {
     // Posts
     const posts = await api.posts.browse({
         limit: 'all',
-        include: 'authors,tags'
+        include: 'authors,tags',
+        filter: 'visibility:public'
     })
 
     const postsWithLinks = posts.map((post, index) => {
@@ -80,7 +81,8 @@ const generateRoutes = async () => {
     // Pages
     const pages = await api.pages.browse({
         limit: 'all',
-        include: 'authors,tags'
+        include: 'authors,tags',
+        filter: 'visibility:public'
     })
 
     pages.forEach((page) => {
