@@ -1,5 +1,5 @@
 {
-  "name": "moso.dev",
+  "name": "nuxt-ghost-blog",
   "version": "1.0.1",
   "description": "Ghost theme using the Ghost Content API",
   "private": true,
