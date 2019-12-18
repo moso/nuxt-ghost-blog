@@ -45,8 +45,13 @@ BLOG_URL=https://anothersite.com # In case your API and blog aren't located on t
 
 Follow [Nuxt.js's instructions](https://nuxtjs.org/faq/netlify-deployment) on how to deploy your site on Netlify.
 
+#### Webhook
+When you make changes to your blog Netlify won't automagically rebuild your page, and since it's staticly generated, your content won't be generated without using a webhook. Luckily Ghost have an integration available for us to almost plug-and-play.
+
+You will need to follow [Ghost's instructions](https://ghost.org/integrations/netlify) on how to add a custom integration and set it up with Netlify. *You can skip step 4*.
+
 ## Theme
-As the theme following this project is *the* theme, you obviously can't use the themes section of the Ghost admin panel anymore. However, you can customize this theme to bits, and if you're already using Netlify or another CI/CD, you have probably hooked this up with a Git repository. Thus, the easiest way to edit the theme is just to clone the repo and start editing. Once done, just commit and push, and your CI/CD will pick up your changes.
+As the theme shipped with this project is *the* theme, you obviously can't use the themes section of the Ghost admin panel anymore. However, you can customize this theme to bits, and if you're already using Netlify or another CI/CD, you have probably hooked this up with a Git repository. Thus, the easiest way to edit the theme is just to clone the repo and start editing. Once done, just commit and push, and your CI/CD will pick up your changes.
 
 Layout-wise, you can edit the post layout in `/components/Posts.vue`, as this component is almost universal to how the posts are presented in this theme. With one exception. Since single posts are a bit different, I've had to split them up. However, as is, they use the same layout. Just remember to reflect your changes into `/pages/_slug.vue` as well.
 
@@ -87,7 +92,7 @@ You can of course use NPM as well.
 ## Contributing
 PRs are ~~welcome~~ encouraged! If you see an error, fork, clone, fix, and send a PR my way. Credit will be given.
 
-As this project is hooked up with both [prettier](https://prettier.io) [eslint](https://eslint.org), you'll likely bump into some errors once you start hacking. [Husky](https://github.com/typicode/husky) will lint your files before pushing to Git. These are only for your protection, and makes sure the code follows a certain standard.
+As this project is hooked up with both [prettier](https://prettier.io) and [eslint](https://eslint.org), you'll likely bump into some errors once you start hacking, but will show you a friendly error message and how to fix it. [Husky](https://github.com/typicode/husky) will lint your files before pushing to Git. These are only for your protection, and makes sure the code follows a certain standard.
 
 This project use the standard [Nuxt ESLint Config](https://github.com/nuxt/eslint-config/tree/master/packages/eslint-config) and will also lint your `.vue` files. Prettier will do the same, however, less strict as I haven't set up too many rules for it. And the `.editorconfig`-file will configure your editor to follow a certain set of standard rules that makes sure your code should look the same (if your editor supports editorconfig).
 
