@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { generateRoutes } from './config/ghost'
-import { build, dev, feed, meta } from './config'
+import { build, feed, meta } from './config'
+import { isDev } from './config/dev'
 
 require('dotenv').config()
 
@@ -8,7 +9,7 @@ export default async () => {
     const { data: { settings } } = await axios.get(process.env.GHOST_URI + '/ghost/api/v3/content/settings/?key=' + process.env.GHOST_KEY + '&v=3')
     return {
         mode: 'universal',
-        modern: !dev.isDev && 'client',
+        modern: !isDev && 'client',
 
         watch: ['~/config/*'],
 
